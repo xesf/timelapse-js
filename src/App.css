@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.dragAndDrop {
+  border: 2px dashed lightgray;
+  width: 500px;
+  height: 250px;
+  line-height: 250px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  
+}
