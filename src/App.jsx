@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" onClick={()=> dispatch({ type: 'RESET' })}>
         <h1 className="App-title">Welcome to Timelaps JS</h1>
       </header>
       {!state.images &&
