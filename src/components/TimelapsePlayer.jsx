@@ -5,6 +5,7 @@ const TimelapsePlayer = ({ images }) => {
 
     useEffect(() => {
         const ctx = canvasRef.current.getContext('2d');
+        let index = 0;
 
         const img = new Image();
         img.onload = () => { 
@@ -27,12 +28,14 @@ const TimelapsePlayer = ({ images }) => {
             ctx.drawImage(img, 0,0, width, height); 
         }; // 4000 × 3000
 
-        const reader = new FileReader();
-        reader.onload = (e) => { img.src = e.target.result; };
-        reader.readAsDataURL(images[0]);
-
+        const interval = setInterval(() => {
+            const reader = new FileReader();
+            reader.onload = (e) => { img.src = e.target.result; };
+            index = (index + 1) % images.length;
+            reader.readAsDataURL(images[index]);
+        }, 500);
         return () => {
-            //delete img;
+            clearInterval(interval);
         };
     });
 
